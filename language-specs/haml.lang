@@ -6,6 +6,7 @@
   <metadata>
     <property name="mimetypes">text/x-haml</property>
     <property name="globs">*.haml</property>
+    <property name="globs">*.w2erb</property>
   </metadata>
   <styles>
     <style id="comment"                 _name="Comment"                 map-to="def:comment"/>
@@ -34,7 +35,7 @@
       <include>
       
         <context id="erb-block" end-parent="true">
-          <start>=|-|~</start>
+          <start>=|~</start>
           <end>$</end>
           <include>
             <context ref="ruby:ruby:*"/>
@@ -42,7 +43,7 @@
         </context>
         
         <context id="tag" style-ref="tag" once-only="true">
-          <match>%[a-zA-Z0-9\-\_]+</match>
+          <match>(%|-)[a-zA-Z0-9\-\_]+</match>
         </context>
         
         <context id="id-tag" style-ref="id-tag">
